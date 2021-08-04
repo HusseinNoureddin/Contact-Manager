@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Portal Manager</title>
+		<script src="./js/md5.js"></script>
+		<script type="text/javascript" src="./js/code.js"></script>
+		<link rel="stylesheet" href="./css/styles.css" >
+		<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/open-sauce-one" type="text/css"/> 
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() 
+			{
+				readCookie();
+			}, true);
+		</script>
+	</head>
+<body>
+	
+	<div class="container">
+		
+		<div id="loggedInDiv">
+			<span id="userName" class="Username"></span><br />
+			<button type="button" id="logoutButton" class="signOut-btn" onclick="logOut();"> Log Out </button>
+		</div>
+		<h1 class="heading" id="title">Portal Manager</h1>
+		<div class="form-loggedIn">
+		<div id="accessUIDiv">
+			<br/> <br/>
+		
+<!--Search button amd modal-->
+
+<div class="searchBox">
+
+	<input class="searchInput"type="text" id="SearchText" name=""  placeholder="Search Contacts">
+	<button class="searchButton" onclick="searchContact();">
+		<i class="material-icons">
+			search
+		</i>
+	</button>
+</div>
+<div class="search-field">
+	<div id="id04" class = "modal-search"> 
+			<div class="modal-container-search"> 			
+			<span id="SearchResult" class="SearchResult">
+      
+				<p id="contactList"> </p>
+			</span>
+			
+			<br/> 
+			
+		  </div>
+		  <span id="edit-modal" class="edit-modal">
+			<div class="modal-container-edit">
+				<button onclick="document.getElementById('edit-modal').style.display='none'"
+		    class="CloseEdit">&times</button>
+			<div class="container-input-edit">
+			<input type="text" class="input-field-edit" placeholder="First Name" id="edit-firstname" >
+			<input type="text" class="input-field-edit" placeholder="Last Name" id="edit-lastname" >
+			<input type="text" class="input-field-edit" placeholder="Phone Number" id="edit-phone" >
+			<input type="text" class="input-field-edit" placeholder="Email" id="edit-email" >
+			<button class="submit-btn" id="edit-btn" onclick = "editContact();">Edit</button>
+		</div>
+			</div>
+         
+		  </span>
+		
+	</div>
+
+</div>
+	
+
+<!--The Add Contact Modal-->
+<button  class="add-button" onclick="openAdd();">Add Contact</button>
+<div id="id01" class = "modal-add"> 
+	<div id="id01cont" class="modal-container-add">
+		<button onclick="document.getElementById('id01').style.display='none'"
+		class="Close">&times</button>
+		<input type="text" class="input-field-add" placeholder="First Name" id="add-firstname" >
+		<input type="text" class="input-field" placeholder="Last Name" id="add-lastname" >
+		<input type="text" class="input-field" placeholder="Phone" id="add-phone" >
+		<input type="text" class="input-field" placeholder="Email" id="add-email" >
+		<span id="add-result"> </span>
+		<button class="submit-btn" id="add-btn" onClick="addContact();">Add</button>
+		
+	  </div>
+
+
+</div>
+		
+ <!-- End of the LoggedIn Form-->
+	</div>
+
+</div>
+</body>
+</html>
